@@ -35,34 +35,34 @@
         <h2>أعمالي الإبداعية</h2>
         <div class="portfolio-gallery">
             <div class="portfolio-item">
-                <img src="images/design1.png" alt="تصميم 1">
+                <img src="images/design1.png" alt="تصميم 1" onclick="openModal(this)">
             </div>
             <div class="portfolio-item">
-                <img src="images/design2.png" alt="تصميم 2">
+                <img src="images/design2.png" alt="تصميم 2" onclick="openModal(this)">
             </div>
             <div class="portfolio-item">
-                <img src="images/design3.png" alt="تصميم 3">
+                <img src="images/design3.png" alt="تصميم 3" onclick="openModal(this)">
             </div>
             <div class="portfolio-item">
-                <img src="images/work4.png" alt="تصميم 4">
+                <img src="images/work4.png" alt="تصميم 4" onclick="openModal(this)">
             </div>
             <div class="portfolio-item">
-                <img src="images/work5.png" alt="تصميم 5">
+                <img src="images/work5.png" alt="تصميم 5" onclick="openModal(this)">
             </div>
             <div class="portfolio-item">
-                <img src="images/work6.png" alt="تصميم 6">
+                <img src="images/work6.png" alt="تصميم 6" onclick="openModal(this)">
             </div>
             <div class="portfolio-item">
-                <img src="images/work7.png" alt="تصميم 7">
+                <img src="images/work7.png" alt="تصميم 7" onclick="openModal(this)">
             </div>
             <div class="portfolio-item">
-                <img src="images/work8.png" alt="تصميم 8">
+                <img src="images/work8.png" alt="تصميم 8" onclick="openModal(this)">
             </div>
             <div class="portfolio-item">
-                <img src="images/work9.png" alt="تصميم 9">
+                <img src="images/work9.png" alt="تصميم 9" onclick="openModal(this)">
             </div>
             <div class="portfolio-item">
-                <img src="images/work10.png" alt="تصميم 10">
+                <img src="images/work10.png" alt="تصميم 10" onclick="openModal(this)">
             </div>
         </div>
     </section>
@@ -99,6 +99,12 @@
         <a href="https://www.facebook.com/profile.php?id=100064973460780" target="_blank">
             <img src="images/facebook-icon.png" alt="Facebook">
         </a>
+    </div>
+
+    <!-- نافذة عرض الصورة -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
     </div>
 
     <script src="script.js"></script>
