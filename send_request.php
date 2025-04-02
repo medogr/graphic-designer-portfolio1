@@ -1,28 +1,30 @@
 <?php
+// تحقق إذا كان الطلب تم عبر POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // استلام البيانات من النموذج
-    $name = $_POST['name'];
-    $phone = $_POST['phone'];
+    // التحقق من البيانات المرسلة
+    $name = isset($_POST['name']) ? trim($_POST['name']) : '';
+    $phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
 
-    // البريد الإلكتروني الذي سيتم إرسال البيانات إليه
-    $to = "mogcggh@gmail.com";  // ضع هنا بريدك الإلكتروني
-    $subject = "طلب تصميم جديد";
-    
-    // إعداد محتوى البريد الإلكتروني
-    $message = "تم استلام طلب تصميم جديد من العميل التالي:\n\n";
-    $message .= "الاسم: " . $name . "\n";
-    $message .= "رقم الهاتف: " . $phone . "\n";
-    
-    // رأس البريد الإلكتروني
-    $headers = "From: no-reply@yourwebsite.com" . "\r\n" .
-               "Reply-To: " . $phone . "\r\n" .
-               "X-Mailer: PHP/" . phpversion();
-    
-    // إرسال البريد الإلكتروني
+    // التحقق من أن البيانات ليست فارغة
+    if (empty($name) || empty($phone)) {
+        echo "الرجاء ملء جميع الحقول.";
+        exit;
+    }
+
+    // إعداد البريد الإلكتروني
+    $to = "mogcggh@gmail.com"; // بريدك الإلكتروني
+    $subject = "طلب تصميم جديد"; // موضوع الرسالة
+    $message = "الاسم: $name\nرقم الهاتف: $phone"; // محتوى الرسالة
+    $headers = "From: no-reply@kinggraphic.com\r\n"; // عنوان المرسل (افتراضي)
+
+    // محاولة إرسال البريد الإلكتروني
     if (mail($to, $subject, $message, $headers)) {
-        echo "تم إرسال الطلب بنجاح!";
+        echo "تم إرسال الطلب بنجاح.";
     } else {
         echo "حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.";
     }
+} else {
+    // في حالة محاولة الوصول المباشر لهذا الملف بدون إرسال بيانات
+    echo "الرجاء ملء النموذج أولاً.";
 }
 ?>
