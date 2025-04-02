@@ -3,18 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>King Graphic - طلب تصميم</title>
+    <title>King Graphic - معرض الأعمال</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- نافذة منبثقة تظهر عند تحميل الصفحة -->
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <img src="images/popup-image.png" alt="إعلان">
-            <button id="close-popup">إغلاق</button>
-        </div>
-    </div>
 
     <!-- الهيدر -->
     <header>
@@ -103,7 +95,7 @@
 
     <!-- نافذة عرض الصورة -->
     <div id="imageModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
+        <span id="closeModal" class="close">&times;</span>
         <img class="modal-content" id="img01">
     </div>
 
