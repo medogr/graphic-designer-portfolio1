@@ -1,18 +1,14 @@
-document.getElementById("commentForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    let commentText = document.getElementById("commentText").value;
-    let commentList = document.getElementById("comments-list");
+// عند النقر على الصورة، فتح النافذة
+function openModal(imgElement) {
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("img01");
+    modal.style.display = "block";
+    modalImg.src = imgElement.src;
+}
 
-    if (commentText.trim() !== "") {
-        let newComment = document.createElement("div");
-        newComment.classList.add("comment");
-        newComment.textContent = commentText;
-        commentList.appendChild(newComment);
-        document.getElementById("commentText").value = "";
-    }
-});
-
-document.getElementById("designForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    alert("تم إرسال طلب التصميم بنجاح!");
-});
+// غلق النافذة عند النقر على زر الإغلاق
+var closeModal = document.getElementById("closeModal");
+closeModal.onclick = function() {
+    var modal = document.getElementById("imageModal");
+    modal.style.display = "none";
+}
